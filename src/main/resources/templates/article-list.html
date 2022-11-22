@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>List Article</title>
+    <style>
+        *
+        td{border: 1px solid black;}
+    </style>
+</head>
+<body>
+     <h1>List Article</h1>
+
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>CreatedDate</td>
+        <td>UpdatedDate</td>
+        <td>Image</td>
+        <td>Category Name</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj : ${listArticle}">
+        <td th:text="${obj.id}">Id</td>
+        <td th:text="${obj.title}">Title</td>
+        <td th:text="${obj.content}">Content</td>
+        <td th:text="${obj.createdDate}">CreatedDate</td>
+        <td th:text="${obj.updatedDate}">UpdatedDate</td>
+        <td th:text="${obj.image}">Image</td>
+        <td th:text="${obj.categoryName}">Category Name</td>
+        <td><a th:href="${'/article/deleteById/' + obj.id}">Delete</a></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

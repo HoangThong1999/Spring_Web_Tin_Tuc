@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table
+@Table()
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
@@ -26,5 +26,9 @@ public class Article {
     private Date updatedDate;
 
     private String image;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 }
